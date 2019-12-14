@@ -11,7 +11,8 @@ class Gallery extends React.Component {
     this.state = {
       containerWidth: 0,
       showLightbox: false,
-      selectedImage: 0
+      selectedImage: 0,
+      galleryContainerWidth: 0
     };
     this.updateContainerWidth = this.updateContainerWidth.bind(this);
     this.toggleLightbox = this.toggleLightbox.bind(this)
@@ -34,7 +35,7 @@ class Gallery extends React.Component {
         });
       }
     });
-    observer.observe(document.getElementById('lightbox-container'));
+    observer.observe(document.getElementById('header-lightbox-container'));
     return () => {
       observer.disconnect();
       window.cancelAnimationFrame(animationFrameID);
@@ -49,10 +50,17 @@ class Gallery extends React.Component {
   }
 
   render() {
+    let headers = (
+      <div id = 'headers'>
+      <img src='https://s3-us-west-1.amazonaws.com/hrr42-fec1.s3.us-west-1.amazonaws.com/opentable.svg' />
+      {/* <div>San Francisco Bay Area</span> */}
+      </div>
+    )
     const width = this.state.containerWidth - 1;
     let thumbs = computeColumnLayout({ containerWidth: width, columns:this.props.columns, photos: this.props.images});
     let images = thumbs.map((thumb, index) => {
       const { left, top, ...photo } = thumb;
+      this.state.galleryContainerWidth = photo.width;
       return Photo({
         left,
         top,
@@ -73,9 +81,12 @@ class Gallery extends React.Component {
           />
         </BodyPortal>
       )
+    let styles = {
+      height: this.state.galleryContainerWidth,
+    }
 
     return (
-      <div id='lightbox-container'>
+      <div id='header-lightbox-container' style = {styles}>
         {images}
         {container}
       </div>

@@ -31,13 +31,13 @@ class App extends React.Component {
   render() {
     return (
       <div id = 'gallery'>
-        <Gallery images={this.state.photos} columns = {4}/>
+        <Gallery images={this.state.photos} columns = {11}/>
       </div>
     );
   }
 
 }
 
-document.getElementById('imageCarousel-session').style.cursor = 'pointer';
+document.getElementById('imageCarouselTop-session').style.cursor = 'pointer';
 
-ReactDOM.render(<App />, document.getElementById('imageCarousel-session'));
+ReactDOM.render(<App />, document.getElementById('imageCarouselTop-session'));

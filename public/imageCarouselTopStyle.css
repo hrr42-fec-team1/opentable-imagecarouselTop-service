@@ -1,8 +1,11 @@
 #imageCarousel-session {
   position: relative;
 }
-#lightbox-container {
-  width: 70%;
+#header-lightbox-container {
+  position: relative;
+  left: 5%;
+  background-color: black;
+  width: 90%;
 }
 
 .lightbox-backdrop {

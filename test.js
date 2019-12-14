@@ -12,7 +12,7 @@ configure({ adapter: new Adapter()});
 describe('expect Gallery component to be rendered correctly', () => {
   it('expect Gallery component to be rendered', () => {
     const wrapper = shallow(<Gallery images={photos}/>, { disableLifecycleMethods: true });
-    expect(wrapper.find('.lightbox-container')).toHaveLength(1);
+    expect(wrapper.find('.header-lightbox-container')).toHaveLength(1);
   });
 
   it('expect 9 images to be rendered', () => {

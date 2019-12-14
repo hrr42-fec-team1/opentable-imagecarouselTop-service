@@ -76,7 +76,7 @@ export default class Container extends React.Component {
   heartPopup(styles) {
     let tableStyles = {
       position: 'absolute',
-      top: '18%',
+      top: '10%',
       left: '10%',
       borderCollapse: 'separate',
       borderSpacing: '0 10px'
@@ -95,7 +95,7 @@ export default class Container extends React.Component {
     if (!this.state.showModal) { return null; }
     return (
       <div className= 'modal-window-container' style={styles}>
-        <table style={tableStyles}>
+        <table id='heart-table' style={tableStyles}>
           <tr>
             <button style={buttonStyles} onClick={this.closeHeartPopup}>I love this restaurant !</button>
           </tr>

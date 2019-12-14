@@ -14,23 +14,6 @@ const Photo = ({ index, toggleLightbox, photo, margin, top, left, key }) => {
     top: top,
     left: left
   };
-  if (index === 8) {
-    return (
-      <div>
-        <img
-          key={key}
-          style={imgStyle}
-          {...photo}
-        />
-        <div className = 'pictures-container' style = {styles} onClick = {() => { toggleLightbox(index); }}>
-          <div className='container-title'>
-            + 91 more
-          </div>
-        </div>
-      </div>
-
-    );
-  }
   return (
     <img
       key={key}
