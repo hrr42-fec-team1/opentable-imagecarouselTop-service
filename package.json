@@ -41,7 +41,7 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
     "resize-observer-polyfill": "^1.5.1",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.12"
   },
   "version": "1.0.0",
   "main": "server/index.js",
